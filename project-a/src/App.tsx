@@ -4,8 +4,10 @@ import { ThemeProvider } from './context/ThemeContext';
 import Rootlayout from './layout/Rootlayout';
 import HomePage from './page/HomePage';
 import ChatBot from './page/Chatbot';
+import HistoryPage from './page/HistoryPage';
 
 import './App.css';
+import Documentation from './page/Documentation';
 
 const router = createBrowserRouter([
   {
@@ -15,6 +17,8 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <HomePage /> },
       { path: "chatbot", element: <ChatBot /> },
+      { path: "history", element: <HistoryPage /> },
+      { path: "documentation", element: <Documentation /> },
     ]
   }
 ]);

@@ -1,0 +1,145 @@
+/* --- History Page Base --- */
+.history-page {
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.history-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* --- Header Content --- */
+.history-title {
+    color: var(--text-primary);
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.history-subtitle {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    margin-top: 0;
+    margin-bottom: 3rem;
+}
+
+/* --- History List --- */
+.history-list {
+    display: flex;
+    flex-direction: column;
+    height: 500px;
+    overflow-y: scroll;
+    gap: 1.25rem;
+}
+
+.history-list::-webkit-scrollbar {
+    width: 8px;
+}
+
+.history-list::-webkit-scrollbar-thumb {
+    background-color: var(--border-color);
+    border-radius: 4px;
+}
+
+.history-item-link {
+    text-decoration: none;
+    border-radius: 12px;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 2px 4px var(--shadow);
+}
+
+.history-item-link:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px var(--shadow);
+}
+
+.history-item {
+    display: flex;
+    align-items: flex-start;
+    padding: 10px 3%;
+    background-color: var(--navbar-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    width: 90%;
+}
+
+.history-item-link:hover .history-item {
+    border-color: var(--border-hover);
+}
+
+/* --- History Item Details --- */
+.history-item-icon {
+    color: var(--text-secondary);
+    font-size: 1.5rem;
+    margin-right: 1.5rem;
+    margin-top: 0.1rem;
+    flex-shrink: 0;
+}
+
+.history-item-details {
+    flex-grow: 1;
+    overflow: hidden;
+}
+
+.history-item-title {
+    color: var(--text-primary);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0 0 0.5rem 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.history-item-excerpt {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    margin: 0 0 0.75rem 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.history-item-date {
+    color: var(--text-light);
+    font-size: 0.85rem;
+}
+
+.history-empty {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    text-align: center;
+    padding: 2rem;
+}
+
+/* --- Responsive --- */
+@media screen and (max-width: 768px) {
+    .history-page {
+        padding-top: 6rem;
+    }
+
+    .history-title {
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .history-page {
+        padding: 5rem 1rem 2rem 1rem;
+    }
+
+    .history-item {
+        padding: 8px 2%;
+    }
+
+    .history-item-icon {
+        font-size: 1.25rem;
+        margin-right: 1rem;
+    }
+
+    .history-item-title {
+        font-size: 1rem;
+    }
+}
