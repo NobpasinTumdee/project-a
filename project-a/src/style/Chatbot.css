@@ -1,0 +1,366 @@
+/* --- Page & Container --- */
+.chatbot-page {
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 80px);
+    overflow: hidden;
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
+        Arial, sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ===  ส่วนเนื้อหาที่ Scroll ได้ === */
+.chat-content-area {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 4rem 1rem 2rem 1rem;
+}
+
+.chat-content-area::-webkit-scrollbar {
+    width: 8px;
+}
+
+.chat-content-area::-webkit-scrollbar-thumb {
+    background-color: var(--border-color);
+    border-radius: 4px;
+}
+
+.chatbot-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* --- Header --- */
+.chatbot-header {
+    text-align: left;
+}
+
+.chatbot-header h2 {
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.chatbot-header h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin: 0.25rem 0;
+}
+
+.chatbot-header p {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    margin: 0.5rem 0 0;
+}
+
+/* --- Prompt Suggestions --- */
+.prompt-suggestions {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.prompt-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: var(--bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: left;
+    cursor: pointer;
+    min-height: 120px;
+    transition: all 0.2s ease;
+}
+
+.prompt-card:hover {
+    border-color: var(--border-hover);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.prompt-card p {
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-primary);
+}
+
+.prompt-card svg {
+    font-size: 1.1rem;
+    color: var(--text-light);
+}
+
+/* --- Refresh Button --- */
+.refresh-prompts {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 0;
+    margin-top: 1.5rem;
+}
+
+.refresh-prompts:hover {
+    color: var(--text-primary);
+}
+
+/* --- Chat Messages --- */
+.example-chat-messages {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.chat-message {
+    display: flex;
+}
+
+.chat-message.user {
+    justify-content: flex-end;
+}
+
+.chat-message.ai {
+    justify-content: flex-start;
+}
+
+.chat-bubble {
+    padding: 0.75rem 1rem;
+    border-radius: 18px;
+    max-width: 80%;
+    line-height: 1.5;
+}
+
+.chat-bubble p {
+    margin: 0;
+}
+
+.chat-message.user .chat-bubble {
+    background-color: var(--btn-bg-primary);
+    color: var(--btn-text-primary);
+    border-bottom-right-radius: 4px;
+}
+
+.chat-message.ai .chat-bubble {
+    background-color: var(--bg-light-gray);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    border-bottom-left-radius: 4px;
+}
+
+/* --- Chat Input Area --- */
+.chat-input-sticky-wrapper {
+    width: 100%;
+    padding: 1rem 0;
+    flex-shrink: 0;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.chat-input-area {
+    width: 100%;
+    position: relative;
+}
+
+
+.chat-input-wrapper {
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 0.75rem 1rem;
+    background-color: var(--bg-color);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.chat-input-wrapper:focus-within {
+    border-color: var(--border-hover);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+
+/* --- Input Main (Textarea + Filter) --- */
+.input-main {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    position: relative;
+}
+
+.input-main textarea {
+    flex-grow: 1;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    font-family: inherit;
+    color: var(--text-primary);
+    background: transparent;
+
+    min-height: 24px;
+    max-height: 30vh;
+    overflow-y: auto;
+    resize: none;
+    padding: 0.75rem 0;
+    line-height: 1.5;
+}
+
+.web-filter-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: var(--bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 0.5rem 0.75rem;
+    height: fit-content;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    transition: border-color 0.2s ease;
+}
+
+.web-filter-btn:hover {
+    border-color: var(--border-hover);
+}
+
+.web-filter-btn svg {
+    font-size: 1rem;
+    color: var(--text-light);
+}
+
+/* --- 7b. Input Toolbar (Bottom) --- */
+.input-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0.75rem;
+}
+
+.toolbar-left,
+.toolbar-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.toolbar-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    color: var(--text-light);
+}
+
+.toolbar-btn:hover {
+    color: var(--text-primary);
+}
+
+.toolbar-btn svg {
+    font-size: 1.1rem;
+}
+
+.toolbar-btn span {
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.char-count {
+    font-size: 0.85rem;
+    color: var(--text-light);
+}
+
+.send-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--btn-bg-primary);
+    color: var(--btn-text-primary);
+    border: none;
+    border-radius: 8px;
+    width: 36px;
+    height: 36px;
+    font-size: 1.25rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.send-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* --- Responsive (Mobile) --- */
+@media screen and (max-width: 768px) {
+    .chatbot-container {
+        max-width: 100%;
+    }
+
+    .chatbot-header h1 {
+        font-size: 2rem;
+    }
+
+    .chatbot-header h2 {
+        font-size: 1.5rem;
+    }
+
+    /* การ์ดเป็น 2 คอลัมน์ */
+    .prompt-suggestions {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .prompt-card {
+        min-height: 100px;
+    }
+
+    /* ลด padding ของ wrapper input */
+    .chat-input-sticky-wrapper {
+        padding: 0.5rem 0;
+    }
+}
+
+@media screen and (max-width: 480px) {
+
+    /* การ์ดเป็น 1 คอลัมน์ */
+    .prompt-suggestions {
+        grid-template-columns: 1fr;
+    }
+
+    .input-main {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .web-filter-btn {
+        align-self: flex-start;
+    }
+
+    .input-toolbar {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1rem;
+    }
+
+    .toolbar-right {
+        justify-content: space-between;
+    }
+
+    /* ซ่อนข้อความบนปุ่ม toolbar */
+    .toolbar-btn span {
+        display: none;
+    }
+
+    .toolbar-left {
+        gap: 1.5rem;
+    }
+}

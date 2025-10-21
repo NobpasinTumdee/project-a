@@ -3,6 +3,7 @@ import { RouterProvider } from 'react-router-dom';
 import { ThemeProvider } from './context/ThemeContext';
 import Rootlayout from './layout/Rootlayout';
 import HomePage from './page/HomePage';
+import ChatBot from './page/Chatbot';
 
 import './App.css';
 
@@ -13,6 +14,7 @@ const router = createBrowserRouter([
     errorElement: <h1>404 Not found this page...</h1>,
     children: [
       { index: true, element: <HomePage /> },
+      { path: "chatbot", element: <ChatBot /> },
     ]
   }
 ]);
