@@ -76,6 +76,7 @@ const ChatBot = () => {
                         <div className="chat-message ai">
                             <div className="chat-bubble">
                                 <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto sint qui nesciunt, nisi ducimus perferendis sed! Cumque culpa vitae debitis inventore adipisci, repellendus omnis a dolorum doloribus molestias, voluptatum quam.</p>
+                                <img style={{ width: '100%' , padding: '10px 0'}} src="https://www.imgonline.com.ua/examples/bee-on-daisy.jpg" alt="" />
                             </div>
                         </div>
                     </div>
@@ -100,7 +101,7 @@ const ChatBot = () => {
                                 />
                                 <button className="web-filter-btn">
                                     <FiGlobe />
-                                    <span>All Web</span>
+                                    <span>Chart</span>
                                     <FiChevronDown />
                                 </button>
                             </div>
