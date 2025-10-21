@@ -1,0 +1,25 @@
+:root {
+  --navbar-bg: #ffffff;
+  --background: #f0f2f5;
+  --accent: #0078ff;
+  --text-primary: #1a1a1a;
+  --text-secondary: #555555;
+  --hover-bg: #f5f7fa;
+  --shadow: rgba(0, 0, 0, 0.08);
+}
+
+[data-theme='dark'] {
+  --navbar-bg: #1b1f24;
+  --background: #1b1f24;
+  --accent: #3ea6ff;
+  --text-primary: #e8e8e8;
+  --text-secondary: #aaaaaa;
+  --hover-bg: #2a2f35;
+  --shadow: rgba(0, 0, 0, 0.3);
+}
+
+body {
+  margin: 0;
+  background-color: var(--background);
+  transition: all 0.3s ease;
+}
